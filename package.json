@@ -1,0 +1,39 @@
+{
+  "name": "tiny-language-support",
+  "author": {
+    "name": "André Gabriel",
+    "url": "https://github.com/Andre0n"
+  },
+  "publisher": "Andre0n",
+  "displayName": "Tiny Language Support",
+  "description": "Add support to Tiny Programming Language",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.68.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "tiny",
+        "aliases": [
+          "Tiny Programming Language",
+          "tiny"
+        ],
+        "extensions": [
+          ".tny"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "tiny",
+        "scopeName": "source.tny",
+        "path": "./syntaxes/tiny.tmLanguage.json"
+      }
+    ]
+  }
+}

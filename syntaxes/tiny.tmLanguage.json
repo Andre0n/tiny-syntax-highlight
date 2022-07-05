@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Tiny Programming Language",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#paren-expression"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#identifier"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.tiny",
+          "match": "\\b(if|while|else|repeat|until|endif|endwhile|then)\\b"
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        {
+          "match": "{[sS]*?}",
+          "name": "comment.block.empty.tiny"
+        },
+        {
+          "begin": "{",
+          "end": "}$",
+          "name": "comment.line.tiny"
+        }
+      ]
+    },
+    "paren-expression": {
+      "begin": "\\(",
+      "end": "\\)",
+      "beginCaptures": {
+        "0": { "name": "punctuation.paren.open.tiny" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.paren.close.tiny" }
+      }
+    },
+    "numbers": {
+      "match": "[0-9]",
+      "name": "constant.numeric.tiny"
+    },
+    "identifier": {
+      "patterns": [
+        {
+          "match": "\\b(read|write)\\b",
+          "name": "entity.name.function.tiny"
+        },
+        {
+          "match": "\\b([a-z_][a-z0-9_]*)\\b",
+          "name": "variable"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.tny"
+}
